@@ -16,7 +16,7 @@ public class ConsultasSelect
         System.out.println("1. id_empleado");
         System.out.println("2. nombre");
         System.out.println("3. especialidad");
-        System.out.println("4. toda la tabla");
+        System.out.println("4. Toda la tabla");
         while (i)
         {
             String columna = sc.nextLine();
@@ -84,8 +84,6 @@ public class ConsultasSelect
         {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM empleados WHERE id_empleado = " + opcion);
-
-
             while (resultSet.next())
             {
                 System.out.println(resultSet.getInt("id_empleado") + " | " + resultSet.getString("nombre") + " | " + resultSet.getString("apellido") + " | " + resultSet.getString("edad") + " | " + resultSet.getString("especialidad") + " | " + resultSet.getString("numero_telefonico"));
